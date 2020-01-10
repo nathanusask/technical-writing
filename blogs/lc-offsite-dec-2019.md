@@ -9,7 +9,10 @@
     * [System of record](#system-of-record)
     * [API first](#api-first)
     * [Deep integration](#deep-integration)
-* [Workshop: deep integration vs friction-free UX](#workshop-deep-integration-vs-friction-free-ux)
+* [Workshops](#workshops)
+    * [Deep integration vs friction-free UX](#deep-integration-vs-friction-free-ux)
+    * [Vendor struggles](#vendor-struggles)
+    * [Partner struggles](#partner-struggles)
 
 ## Overview
 The offsite took place on Thursday, December 19th 2019 at the Living Sky Cafe on the 3rd Ave S.
@@ -27,7 +30,7 @@ Briefly, this game asked each participant to answer the questions in their assig
 their own names along with a different one from one of the other attendants. For instance, Nathan was asked who
 would he invite to host a late night show; Nathan answered Conan O'Brien (yeah you can't deny Conan's self-deprecation comedy
 can you?); Nathan wrote down his name behind Levi who Nathan thought would give the same answer; then people were asked
-who wrote down the answer from the two candidates; i.e., Nathan or Levi; sadly people chose Levi over Nathan lol.
+who wrote down the answer from the two candidates; i.e., Nathan or Levi; sadly more people chose Levi over Nathan lol.
 It was a great 15-minute game that brought everyone closer.
 
 ## Company 3-year strategy and goals and Marketplace divisional goals
@@ -78,4 +81,48 @@ the brand we integrated or the brand was difficult to work with; e.g., we found 
 was not cooperative in providing us actionable solutions. As much as we wanted to improve our integration work,
 it wasn't easy to come up with a tangible goal to mitigate this issue at that moment.
 
-## Workshop: deep integration vs friction-free UX
+## Workshops
+Three workshops took place during the day; one before lunch and the other two in the afternoon.
+Parker facilitated the one-and-half-hour workshop to discuss pros and cons of doing deep integration versus friction-free UX.
+In the afternoon, our guests shared their thoughts in hig-level to discuss the struggles they saw from partners and vendors
+in the past year.
+
+### Deep integration vs friction-free UX
+Deep integration means data are synchronized between our platform and the global brands platforms.
+Also, it means that the user portal we provide for partners has SSO that allows them to access their accounts on
+the other end; i.e., the brand itself. Such a user portal is meant to provide navigation for users to go back and forth
+between our platform and the brand. However, our integration work didn't go with that depth and somehow partners might
+have constantly lost track during their use of our platform.
+
+Jared mainly focused on what was not working and what did not work properly.
+He acknowledged that not all of them were related to the team; various causes could make things go wrong.
+Fro instance, sometimes the issues were not taken care of on the brands side such as the unmatched G Suite license number issue;
+or it could be the things we did were the those our cloud brokers did not care about the most.
+However, there were issues that were our fault. Products such as G Suite and MS-Office had confusing setups.
+Specifically, majority of our cloud brokers were marketplace agents who did not understand our platform very well.
+For example, we had these portals, but the cloud brokers did not fully understand the workflow; e.g., our G Suite portal
+could do some of the admin stuff but not all of it, which became a UX issue.
+Things such as monthly billing and transfer were not well integrated either; e.g., G Suite was not integrated with monthly billing
+and MS-office currently did not have transfer ready.
+Moreover, ee still had missing features for products such as Office subscriptions and we were missing opportunities
+because of this incomplete integration. 
+Further, the SSO might not be a good user experience, especially for G Suite and Office,
+because the way email was viewed by the cloud brokers was different than going to google directly which was more intuitive
+for them; in other words, they might want to have fixed credentials instead of reading emails all the time to
+get temporary access. Sometimes they would guess why things were not working was because of the poor SSO.
+Finally, Jared suggested that the way we integrated products should be more proactive,
+because we didn't want to miss opportunities.
+One way to accomplish this, as he pointed out, was to look at our competitors and dig into their features;
+in other words, we should consider things before cloud brokers complain.
+
+Parker then asked attendants to write down the pros and cons for doing deep integration and then dot vote
+what were the most important ones. After a while, we picked the following tops:
+For pros, people agreed on that deep integration would make our platform a one-stop shop and hence would
+bring in more opportunities. In addition, people agreed on that deep integration would definitely add more value to the company.
+For the cons, people agreed on that deep integration would end up with features not being used.
+However, Levi suggested that it would be rare and that we do more competitor research.
+Also, time and MVP could be another drawback for making deep integration happen.
+
+### Vendor struggles
+
+### Partner struggles
