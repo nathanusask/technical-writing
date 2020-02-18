@@ -13,6 +13,8 @@
     * [Deep integration vs friction-free UX](#deep-integration-vs-friction-free-ux)
     * [Vendor struggles](#vendor-struggles)
     * [Partner struggles](#partner-struggles)
+* [Top items from ideation](#top-items-from-ideation)
+* [Summary](#summary)
 
 ## Overview
 The offsite took place on Thursday, December 19th 2019 at the Living Sky Cafe on the 3rd Ave S.
@@ -124,5 +126,47 @@ However, Levi suggested that it would be rare and that we do more competitor res
 Also, time and MVP could be another drawback for making deep integration happen.
 
 ### Vendor struggles
+Nolan summarized the following struggles from vendors' perspectives:
+1. One may find losing navigation quickly;
+1. Structure of vendors' offering is missing;
+    1. we may need to communicate with our internal models and see how to translate them to theirs and set that up.
+1. Lots of friction with the set up steps;
+1. Testing: webhooks with actual order form data; and
+1. Available deep integrations
 
 ### Partner struggles
+From Success on Demand team:
+1. Demoing it is hard;
+1. Use a create composer component for simple Partner owned services/apps right in their Partner Center store
+1. Easy to add services to whatever product I want
+1. What happens when I deploy my app? (ensure safety)
+1. Marketing material is not used - let them choose what they need
+1. What can I do and why do I need it for my product?
+1. Confusing terminology: Product or App?
+
+## Top items from ideation
+1. Simplify the create workflow:
+    1. prescribe solution; different workflows for app vs service
+    1. wizard shouldn’t be on every create (first time vendor center)
+    1. addons, editions laid out as a framework
+    1. visuals for what’s happening (eg order form)
+    1. copy functionality: the marketing material for the end user; apps themselves
+    1. metrics: time to first create; abandonment rates; NPS; decreasing the average time to creating an app
+1. Improve the navigation:
+    1. metrics: hotjar; NPS; tracking feedback to success and Nolan via a Vendor Center tag; track how deep people are integrating; user drop offs (how to get from place to place); frequency of SoD calls regarding Vendor Center
+1. Intent Based App Creation:
+suggestions based on what you’re integrating as: service vs app needs (eg webhooks)
+    1. App or Digital Solution: usability, utility, reliability, efficiency
+    1. Service: intangibility, variability, case studies would be important, not DIY
+    1. customized experience to the creator’s intent
+    1. remove unnecessary roadblocks
+    1. metrics: spread between the different options; what are users actually using (user behaviour)
+
+# Summary
+It was an intense day full of schedules but there were also fun activities that eased our pressure from heavy discussions
+as well. For instance, Breanne led the activity where people were asked to write down a Facebook post
+that people would want to post in the upcoming year. I wrote down the accomplishments we would make
+in each month and Jared's, however, were far more interesting than mine; he basically wrote down each developer's
+wish come true in the new year which was super nice. Now looking back at my first offsite and looking at
+our team's current work at the same time, I feel content and motivated as we are doing exactly what we planed to do
+a few months back.
