@@ -162,7 +162,7 @@ suggestions based on what you’re integrating as: service vs app needs (eg webh
     1. remove unnecessary roadblocks
     1. metrics: spread between the different options; what are users actually using (user behaviour)
 
-# Summary
+## Summary
 It was an intense day full of schedules but there were also fun activities that eased our pressure from heavy discussions
 as well. For instance, Breanne led the activity where people were asked to write down a Facebook post
 that people would want to post in the upcoming year. I wrote down the accomplishments we would make
