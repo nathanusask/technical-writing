@@ -192,7 +192,7 @@ Smash cause 8 damages
 Walk in 5 spaces
 ```
 
-To follow Graham's writing style, I'd like keep this post short but readable.
+To follow Graham's writing style, I'd like to keep this post short but readable.
 Hopefully this brief post helps you to capture the basics of the adapter design pattern.
 There are, for sure, more in-depth illustration of the adapter pattern and I (or someone else who would like to)
 will wrap up the content in Part II to discuss more about adapters.
