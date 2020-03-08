@@ -196,14 +196,14 @@ Walk in 5 spaces
 
 There are 4 essential parts in the adapter design patter:
 
-1. *Target*
-    - defines the domain-specific interface that *Client* uses
-1. *Client*
-    - collaborates with objects conforming to the *Target* interface
-1. *Adaptee*
+1. **Target**
+    - defines the domain-specific interface that **Client** uses
+1. **Client**
+    - collaborates with objects conforming to the **Target** interface
+1. **Adaptee**
     - defines an existing interface that needs adapting
-1. *Adapter*
-    - adapts the interface of *Adaptee* to the *Target* interface
+1. **Adapter**
+    - adapts the interface of **Adaptee** to the **Target** interface
 
 To follow Graham's writing style, I'd like to keep this post short but readable.
 Hopefully this brief post helps you to capture the basics of the adapter design pattern.
