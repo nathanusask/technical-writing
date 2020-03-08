@@ -194,7 +194,7 @@ Walk in 5 spaces
 
 ### Summary
 
-There are 4 essential parts in the adapter design patter:
+There are 4 essential parts in the adapter design pattern:
 
 1. **Target**
     - defines the domain-specific interface that **Client** uses
