@@ -122,7 +122,7 @@ func (r enemyRobot) marchWithDriver(driverName string) {
 
 As we can see, `enemyRobot` has a set of different methods that makes it incompatible with `enemyAttacker`.
 Also, in `go`, it throws an error upon calling
-`run(robot, "A poor dirver")`, where `robot` is an instance of `enemyRobot`. In this case,
+`run(robot, "A poor driver")`, where `robot` is an instance of `enemyRobot`. In this case,
 we want to write a class (in `go` it's rather a struct) to adapt the `enemyAttacker` to use `enemyRobot`.
 We then write a `robotAdapter`:
 
