@@ -115,8 +115,8 @@ func (r enemyRobot) walk() {
 	fmt.Println("Walk in", r.walkDistance, "spaces")
 }
 
-func (r enemyRobot) marchWithDriver(driverName string) {
-	fmt.Println("Stop tramping, marching with", driverName)
+func (r enemyRobot) trampOnDriver(driverName string) {
+	fmt.Println("Tramp on", driverName)
 }
 ```
 
@@ -177,17 +177,17 @@ func main() {
 
 The following shows the result of running `main`
 ```shell script
-rocky:adapter_pattern nyang$ go run adapter_example.go
+rocky:adapter_pattern nyang$ go run adapter_example.go 
 A new enemy tank has been created
 Assign to driver Nathan
 Cause 2 damages
 Move 8 spaces
 A new enemy robot has been created
-Stop tramping, marching with Graham
+Tramp on Graham
 Smash cause 8 damages
 Walk in 5 spaces
 A new enemy robot adapter has been created
-Stop tramping, marching with Donald
+Tramp on Donald
 Smash cause 8 damages
 Walk in 5 spaces
 ```

@@ -64,8 +64,8 @@ func (r enemyRobot) walk() {
 	fmt.Println("Walk in", r.walkDistance, "spaces")
 }
 
-func (r enemyRobot) marchWithDriver(driverName string) {
-	fmt.Println("Stop tramping, marching with", driverName)
+func (r enemyRobot) trampOnDriver(driverName string) {
+	fmt.Println("Tramp on", driverName)
 }
 
 type robotAdapter struct {
@@ -88,7 +88,7 @@ func (a robotAdapter) move() {
 }
 
 func (a robotAdapter) assignDriver(driverName string) {
-	a.robot.marchWithDriver(driverName)
+	a.robot.trampOnDriver(driverName)
 }
 
 func main() {
@@ -98,7 +98,7 @@ func main() {
 
 	// enemy robot
 	robot := NewEnemyRobot()
-	robot.marchWithDriver("Graham")
+	robot.trampOnDriver("Graham")
 	robot.smashWithHands()
 	robot.walk()
 	// the following commented out lines will have compile errors because of incompatibility
