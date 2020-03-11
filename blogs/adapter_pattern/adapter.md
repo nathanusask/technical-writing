@@ -148,7 +148,7 @@ func (a robotAdapter) move() {
 }
 
 func (a robotAdapter) assignDriver(driverName string) {
-	a.robot.marchWithDriver(driverName)
+	a.robot.trampOnDriver(driverName)
 }
 ```
 
@@ -163,7 +163,7 @@ func main() {
 
 	// enemy robot
 	robot := NewEnemyRobot()
-	robot.marchWithDriver("Graham")
+	robot.trampOnDriver("Graham")
 	robot.smashWithHands()
 	robot.walk()
 	// the following commented out lines will have compile errors because of incompatibility
