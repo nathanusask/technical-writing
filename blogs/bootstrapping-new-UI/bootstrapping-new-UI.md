@@ -2,7 +2,7 @@
 
 You know what Graham, bootstrapping isn't just a term referring to building up
 a brand new microservice
-and here's my supportive [statement](#https://www.techopedia.com/definition/3328/bootstrap):
+and here's my supportive [statement](https://www.techopedia.com/definition/3328/bootstrap):
 "A bootstrap is the program that initializes the operating system (OS) during startup.
 The term bootstrap or bootstrapping originated in the early 1950s.
 It referred to a bootstrap load button that was used to initiate a hardwired bootstrap program,
@@ -20,7 +20,7 @@ e.g., if I'm running the frontend locally or accessing the demo app,
 the app should make API calls to the demo
 endpoints and get data from vStore demo with a demo bearer token.
 So how do we do that?
-In your `index.html` file, *never ever* forget about the following commented out lines:
+In your `index.html` file, **never ever** forget about the following commented out lines:
 ```html
 <!-- vStaticInject:environment -->
 <!-- vStaticInject:deployment -->
