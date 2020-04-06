@@ -1,16 +1,53 @@
-# Bootstrapping New Frontend UI-- Sharing my experience from creating the web crawler UI
+# Building a new frontend app from scratch -- Sharing my experience from creating the web crawler UI
 
-You know what Graham, bootstrapping isn't just a term referring to building up
-a brand new microservice
-and here's my supportive [statement](https://www.techopedia.com/definition/3328/bootstrap):
-"A bootstrap is the program that initializes the operating system (OS) during startup.
-The term bootstrap or bootstrapping originated in the early 1950s.
-It referred to a bootstrap load button that was used to initiate a hardwired bootstrap program,
-or smaller program that executed a larger program such as the OS."
+While adding new features to existing projects is something we do on a daily basis as developers,
+not too many of us have the experience of building a brand new frontend app from scratch.
+Building a new Vendasta frontend app from ground up is a task that I have never done in my career
+and I think it would be worthwhile to compose a blog sharing such an experience.
+In this post, I mainly focus on what I did to set up cloudbuild and add authentication to this new app.
+
 
 ## Setting up github code repository and cloudbuild
+In order to generate a brand new github code repository under Vendasta, we may need to get help from
+the SRE team. In this step, you may need to provide a project name and typically for a frontend app,
+the name should be `<µs-app-name>-client` where `<µs-app-name>` is the project name of the corresponding microservice.
+While most of the work would be handled by the SRE team, there are several files you
+may need to provide by yourself.
+1. `cloudbuild.yml` for cloud build to automatically build your app and send you notification through Mission Control
+so that you can deploy.
+    - Since the app I'm building is an internal UI tool similar to
+    the [admin page](https://admin.vendasta-internal.com),
+    I can copy the content of `vendasta-center-client/cloudbuild.yml`
+    and change certain spots to make it my own. Likewise, if you are
+    building a customer-face app, find one existing frontend project and
+    re-use its `cloudbuild.yml`.
+1. `frontend.yaml` to specify how we will deploy the frontend
+container but in our case the content is rather simple. 
+    - In this file, you may just need to provide one line
+    ```yml
+     app_id: some-app-name
+    ```     
+1. `service-level` to mainly tell which team owns this project
+    - In this file you may just need to add the following content
+    ```yml
+     services:
+       - name: <project-name>
+         platform: "Frontend: Angular"
+         language: typescript
+         availability: 0
+         owner: <team-name>
+    ```
 
 ## Authentication
+Since it's an internal tool, we give access only to Vendasta users and we can do this through
+the Google login. It might also be nice to have an atlas navigation bar to indicate who is currently
+logged in and make sure they can logout. The following is what you'll need in this step:
+1. Auth service
+1. Environment service
+1. HTTP interceptor
+1. Logout component
+1. (*nice to have*) Atlas component
+
 
 ## Redirection between auth and app pages with different environments
 The app should operate in a given environment (e.g., local, demo, prod, test, etc.) and
