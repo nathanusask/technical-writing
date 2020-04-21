@@ -50,78 +50,79 @@ container but in our case the content is rather simple.
 Since it's an internal tool, we give access only to Vendasta users and we can do this through
 the Google login. It might also be nice to have an atlas navigation bar to indicate who is currently
 logged in and make sure they can logout. The followings are what you'll need for this step
-and I've put links to their corresponding examples:
+and I've put links to their corresponding examples.
 
-1. [Auth service](https://github.com/vendasta/web-crawler-client/blob/master/src/app/auth/auth.service.ts)
-    
-    1. If the app gives access to only admin users, you may need to specify the scope to admin in the
-    basic config as in the following code snippet:
-    
-        ```typescript
-        const baseAuthConfig = {
-           scope: ['admin'].join(' '),
-        
-           strictDiscoveryDocumentValidation: false,
-           skipIssuerCheck: true,
-        
-           // use silent refresh rather than refresh token
-           useSilentRefresh: true,
-        
-           responseType: 'code',
-        };
-        ```
-    
-    1. If you do specify the scope to admin in your frontend app,
-    you'll also need to change the service API to have
-    the scope set to admin as well. Here's an example you may follow
-    in your `vendastaapis` proto:
-    
-        ```go
-        service ScraperService {
-           rpc Create(CreateScraperRequest) returns (google.protobuf.Empty){
-               option (vendastatypes.access) = {
-                 scope: "admin"
-               };
-           };
-           rpc Update(UpdateScraperRequest) returns (google.protobuf.Empty){
-               option (vendastatypes.access) = {
-                 scope: "admin"
-               };
-           };
-           rpc List(ListScraperRequest) returns (ListScraperResponse){
-               option (vendastatypes.access) = {
-                 scope: "admin"
-               };
-           };
-        }
-        ```
+### [Auth service](https://github.com/vendasta/web-crawler-client/blob/master/src/app/auth/auth.service.ts)
+
+If the app gives access to only admin users, you may need to specify the scope to admin in the
+basic config as in the following code snippet:
+```typescript
+const baseAuthConfig = {
+   scope: ['admin'].join(' '),
+
+   strictDiscoveryDocumentValidation: false,
+   skipIssuerCheck: true,
+
+   // use silent refresh rather than refresh token
+   useSilentRefresh: true,
+
+   responseType: 'code',
+};
+```
+
+If you do specify the scope to admin in your frontend app,
+you'll also need to change the service API to have
+the scope set to admin as well. Here's an example you may follow
+in your `vendastaapis` proto:
+```go
+service ScraperService {
+   rpc Create(CreateScraperRequest) returns (google.protobuf.Empty){
+       option (vendastatypes.access) = {
+         scope: "admin"
+       };
+   };
+   rpc Update(UpdateScraperRequest) returns (google.protobuf.Empty){
+       option (vendastatypes.access) = {
+         scope: "admin"
+       };
+   };
+   rpc List(ListScraperRequest) returns (ListScraperResponse){
+       option (vendastatypes.access) = {
+         scope: "admin"
+       };
+   };
+}
+```
+
+Use silent refresh and here's a good explanation from Jason Prokop:
+
+   - With silent refresh, the main application accomplishes retrieving fresh token
+   for the user with zero user interaction or page navigation.
    
-   1. Use silent refresh and here's a good explanation from Jason Prokop:
+   - The angular library does the followings:
    
-       - With silent refresh, the main application accomplishes retrieving fresh token
-       for the user with zero user interaction or page navigation.
+       - Opens an iframe directed at the SSO auth URL
+       (with parameters indicating zero user interaction
+       -- now produces errors about interaction when met)
        
-       - The angular library does the followings:
+       - iframe gets redirected to the silent refresh URL
+       (specified in previous step’s request)
+       for authenticated and consenting user with code for token exchange
        
-           - Opens an iframe directed at the SSO auth URL
-           (with parameters indicating zero user interaction
-           -- now produces errors about interaction when met)
-           
-           - iframe gets redirected to the silent refresh URL
-           (specified in previous step’s request)
-           for authenticated and consenting user with code for token exchange
-           
-           - iframe renders silent refresh html
-           which sends code to main application window
-           - main application exchanges code for fresh token
-           
+       - iframe renders silent refresh html
+       which sends code to main application window
+       - main application exchanges code for fresh token
+       
+### Other necessary services or components
 1. [Environment service](https://github.com/vendasta/web-crawler-client/blob/master/src/app/common/environment.service.ts)
 
 1. [HTTP interceptor](https://github.com/vendasta/web-crawler-client/blob/master/src/app/access/interceptor.ts)
 
 1. [Logout component](https://github.com/vendasta/web-crawler-client/tree/master/src/app/logout)
 
-1. (*nice to have*) [Atlas component](https://github.com/vendasta/web-crawler-client/tree/master/src/app/atlas)
+
+### Nice to have
+[Atlas component](https://github.com/vendasta/web-crawler-client/tree/master/src/app/atlas)
 
 
 ## Redirection between auth and app pages with different environments
