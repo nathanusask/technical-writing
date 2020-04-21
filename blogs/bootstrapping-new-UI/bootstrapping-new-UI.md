@@ -165,56 +165,55 @@ I wish to call from the current phase of my frontend; e.g., `List`, `Create` and
 
 ## Setup service provider
 
-1. Register service provider (_repeat it for prod as the example is for demo_)
+### Register service provider (_repeat it for prod as the example is for demo_)
 
-    ```shell script
-    curl --location --request POST 'https://sso-api-demo.vendasta-internal.com/sso.v1.ServiceProviderAdmin/CreateServiceProvider' \
-    --header 'content-type: application/json' \
-    --header 'authorization: Bearer <bear token>' \
-    --data-raw '{
-        "service_provider": {
-        "entry_url": "https://<your_app-name>-demo.apigatway.co/",
-        "owned_and_operated": true,
-        "primary_domain": "https://<your_app_name>-demo.apigatway.co/",
-        "service_provider_id": "<your_service_provider_id>",
-        "session_url": "",
-        "logout_url": ""
-        }
-    }'
-    ```
+```shell script
+curl --location --request POST 'https://sso-api-demo.vendasta-internal.com/sso.v1.ServiceProviderAdmin/CreateServiceProvider' \
+--header 'content-type: application/json' \
+--header 'authorization: Bearer <bear token>' \
+--data-raw '{
+    "service_provider": {
+    "entry_url": "https://<your_app-name>-demo.apigatway.co/",
+    "owned_and_operated": true,
+    "primary_domain": "https://<your_app_name>-demo.apigatway.co/",
+    "service_provider_id": "<your_service_provider_id>",
+    "session_url": "",
+    "logout_url": ""
+    }
+}'
+```
 
-1. Obtain client IDs (_repeat for prod as the example is for demo_)
+### Obtain client IDs (_repeat for prod as the example is for demo_)
 
-    ```shell script
-    curl --location --request POST 'https://sso-api-demo.apigateway.co/sso.v1.ServiceProviderAdmin/CreateConfig' \
-    --header 'Content-Type: application/json' \
-    --header 'authorization: Bearer <bear token>' \
-    --data-raw '{
-        "name": "web-crawler-client",
-        "service_provider_id": "<your_service_provider_id>",
-        "redirect_uris": ["https://<your_app_name>-demo.vendasta-internal.com"]
-    }'
-    ```
+```shell script
+curl --location --request POST 'https://sso-api-demo.apigateway.co/sso.v1.ServiceProviderAdmin/CreateConfig' \
+--header 'Content-Type: application/json' \
+--header 'authorization: Bearer <bear token>' \
+--data-raw '{
+    "name": "web-crawler-client",
+    "service_provider_id": "<your_service_provider_id>",
+    "redirect_uris": ["https://<your_app_name>-demo.vendasta-internal.com"]
+}'
+```
    
-    Grab the client ID from here and use it in the next step.
+Grab the client ID from here and use it in the next step.
 
-1. Update redirect URLs for service provider (_repeat for prod
-and get rid of_ `localhost` _as the example is for demo_)
+### Update redirect URLs for service provider (_repeat for prod and get rid of_ `localhost` _as the example is for demo_)
 
-    ```shell script
-    curl --location --request POST 'https://sso-api-demo.vendasta-internal.com/sso.v1.ServiceProviderAdmin/UpdateConfig' \
-    --header 'content-type: application/json' \
-    --data-raw '{
-        "mutations": [
-            {
-                "redirect_uris": {
-                    "repeated_string": ["http://localhost:4200", "https://<your_app_name>-demo.vendasta-internal.com"]
-                }
+```shell script
+curl --location --request POST 'https://sso-api-demo.vendasta-internal.com/sso.v1.ServiceProviderAdmin/UpdateConfig' \
+--header 'content-type: application/json' \
+--data-raw '{
+    "mutations": [
+        {
+            "redirect_uris": {
+                "repeated_string": ["http://localhost:4200", "https://<your_app_name>-demo.vendasta-internal.com"]
             }
-        ],
-        "client_id": "<client_id>"
-    }'
-    ```
+        }
+    ],
+    "client_id": "<client_id>"
+}'
+```
 
 The above three endpoint calls to the SSO µs are probably the most critical ones you may need
 to make for this step. You may find more details
