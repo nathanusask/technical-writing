@@ -30,7 +30,7 @@ container but in our case the content is rather simple.
     - In this file, you may just need to provide one line
     
         ```yml
-         app_id: some-app-name
+        app_id: some-app-name
         ```     
    
 1. `service-level` to mainly tell which team owns this project
@@ -58,17 +58,17 @@ and I've put links to their corresponding examples:
     basic config as in the following code snippet:
     
         ```typescript
-           const baseAuthConfig = {
-               scope: ['admin'].join(' '),
-           
-               strictDiscoveryDocumentValidation: false,
-               skipIssuerCheck: true,
-           
-               // use silent refresh rather than refresh token
-               useSilentRefresh: true,
-           
-               responseType: 'code',
-           };
+        const baseAuthConfig = {
+           scope: ['admin'].join(' '),
+        
+           strictDiscoveryDocumentValidation: false,
+           skipIssuerCheck: true,
+        
+           // use silent refresh rather than refresh token
+           useSilentRefresh: true,
+        
+           responseType: 'code',
+        };
         ```
     
     1. If you do specify the scope to admin in your frontend app,
@@ -77,23 +77,23 @@ and I've put links to their corresponding examples:
     in your `vendastaapis` proto:
     
         ```go
-           service ScraperService {
-               rpc Create(CreateScraperRequest) returns (google.protobuf.Empty){
-                   option (vendastatypes.access) = {
-                     scope: "admin"
-                   };
+        service ScraperService {
+           rpc Create(CreateScraperRequest) returns (google.protobuf.Empty){
+               option (vendastatypes.access) = {
+                 scope: "admin"
                };
-               rpc Update(UpdateScraperRequest) returns (google.protobuf.Empty){
-                   option (vendastatypes.access) = {
-                     scope: "admin"
-                   };
+           };
+           rpc Update(UpdateScraperRequest) returns (google.protobuf.Empty){
+               option (vendastatypes.access) = {
+                 scope: "admin"
                };
-               rpc List(ListScraperRequest) returns (ListScraperResponse){
-                   option (vendastatypes.access) = {
-                     scope: "admin"
-                   };
+           };
+           rpc List(ListScraperRequest) returns (ListScraperResponse){
+               option (vendastatypes.access) = {
+                 scope: "admin"
                };
-           }
+           };
+        }
         ```
    
    1. Use silent refresh and here's a good explanation from Jason Prokop:
@@ -152,10 +152,10 @@ In order to establish a connection between your frontend app and microservice, y
 to add some code in your microservice and here's a good example you can take:
 
 ```go
-    // Handler for UI client
-	grpcJSONTranscodedServer := serverconfig.CORS(bifrost.Wrap(grpcServer, strconv.Itoa(HTTPPort)))
-	mux.Handle("/web_crawler.v1.ScraperService/", grpcJSONTranscodedServer)
-	mux.HandleFunc("/", c.GetIndexHTMLHandler(ctx, func(r *http.Request) (string, error) { return "", nil }))
+// Handler for UI client
+grpcJSONTranscodedServer := serverconfig.CORS(bifrost.Wrap(grpcServer, strconv.Itoa(HTTPPort)))
+mux.Handle("/web_crawler.v1.ScraperService/", grpcJSONTranscodedServer)
+mux.HandleFunc("/", c.GetIndexHTMLHandler(ctx, func(r *http.Request) (string, error) { return "", nil }))
 ```
 
 In the above example, the `ScraperService` handles the API endpoints that
@@ -223,20 +223,20 @@ to make for this step. You may find more details
 ## Code format
 
 ### Prettier
-Prettier may save you a significant amount of time organizing your code any
+Prettier may save you a significant amount of time to organize your code and
 [here](https://www.jetbrains.com/help/webstorm/prettier.html) is a good spot
 for you to setup prettier for your WebStorm IDE.
 Also, you may need to add the following JSON condig in your `paackage.json`:
 
 ```json
-  "prettier": {
-    "singleQuote": true,
-    "printWidth": 120,
-    "useTabs": false,
-    "tabWidth": 4,
-    "semi": true,
-    "bracketSpacing": true
-  }
+"prettier": {
+"singleQuote": true,
+"printWidth": 120,
+"useTabs": false,
+"tabWidth": 4,
+"semi": true,
+"bracketSpacing": true
+}
 ```
 
 ### WebStorm import settings
@@ -251,7 +251,7 @@ But you can save your time on this by adding the following setting to your WebSt
 1. check ES6 import/export braces
 
 The following screenshot may better help you with this.
-![Image of WebStorm Setting for import](file:///Users/nyang/Desktop/webstorm-import-setting.jpeg)
+![Image of WebStorm Setting for import](./webstorm-import-setting.jpeg)
 
 ## Acknowledgements
 Special thanks go out to Taylor Wiebe (for helping me go through
