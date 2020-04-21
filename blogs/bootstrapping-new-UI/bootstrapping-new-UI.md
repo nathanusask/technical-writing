@@ -55,7 +55,8 @@ and I've put links to their corresponding examples:
 1. [Auth service](https://github.com/vendasta/web-crawler-client/blob/master/src/app/auth/auth.service.ts)
     
     1. If the app gives access to only admin users, you may need to specify the scope to admin in the
-    basic config as in the following pieces:
+    basic config as in the following code snippet:
+    
         ```typescript
            const baseAuthConfig = {
                scope: ['admin'].join(' '),
@@ -74,6 +75,7 @@ and I've put links to their corresponding examples:
     you'll also need to change the service API to have
     the scope set to admin as well. Here's an example you may follow
     in your `vendastaapis` proto:
+    
         ```go
            service ScraperService {
                rpc Create(CreateScraperRequest) returns (google.protobuf.Empty){
