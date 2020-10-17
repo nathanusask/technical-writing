@@ -1,18 +1,36 @@
 # Foundation is Key: Introduction
 
 
-Ever since I joined Vendasta, I have been working on different projects with different teams. In a lot of times after a whole day of working I didn't feel the energy to consolodate the foundation of the technologies I used. From time to time I just felt that I was being overly occupied with stories and bugs (and meetings for sure). Other times I would even put up considerable time after regular working hours to deliver values. Nothing seems to be terribly wrong so far because delivering values is the most important thing right? Well, that depends.
+Ever since I joined Vendasta,
+I have been working on different projects with different teams.
+In a lot of times after a whole day of working I didn't feel the energy
+to consolidate the foundation of the technologies I used.
+From time to time I just felt that I was being overly occupied with stories and bugs (and meetings for sure).
+Other times I would even put up considerable time after regular working hours to deliver values.
+Nothing seems to be terribly wrong so far because delivering values is the most important thing right?
+Well, that depends.
 
-On one hand, I did find that I had gained substantial experience in development and to the date I'm confident to say that I've developed a great skill in navigating and driving; on the other hand, I might not be able to tell why we should do certain things in certain ways. Oftentimes I just managed to convince myself and teammates that there was some existing code that solved a similar problem and it worked. But that didn't answer the question why they worked; also, no technology is perfect and there must be a reason why we chose to use some in the first place. To me personally, technical skills and knowledge make who we are as developers, not our searching skills. There's a joke about stackoverflow saying that when stackoverflow crashes then the stackoverflow engineers will have trouble, because they can't use stackoverflow to troubleshoot what causes the crash. LMAO!
+On one hand, I did find that I had gained substantial experience in development and
+to the date I'm confident to say that I've developed a great skill in navigating and driving;
+on the other hand, I might not be able to tell why we should do certain things in certain ways.
+Oftentimes I just managed to convince myself and teammates that there was some existing code
+that solved a similar problem, and it worked, but that didn't answer the question of why they worked.
+No technology is perfect and there must be a reason why we chose to use some in the first place.
+To me personally, technical skills and knowledge make who we are as developers, not our searching skills.
+There's a joke about stackoverflow saying that when stackoverflow crashes
+then the stackoverflow engineers will have trouble,
+because they can't use stackoverflow to troubleshoot what's caused the crash. LMAO!
 
-In this post, I'll summarize what I've done for my first ever professional development, my plan, as well as my motivaion, Finally and hopefully, the materials I've read and the videos I've watched can help us to consolidate our foundations so that we don't get *stackoverflowed* in future.
+In this post, I'll summarize what I've done for my first ever professional development, my plan, as well as my motivation.
+Finally, and hopefully, the materials I've read, and the videos I've watched can help us to consolidate our foundations
+so that we don't get *stackoverflowed* in the future.
 
 
 ## Plan & Motivation
 
 1. Understand terminologies and consolicate basic computer science concepts
 	- middleware (to make our codebase more structured and efficient)
-	- dockerization, containerization, orchestration, cgroups and namesppaces (dive deeper into how CI/CD works behind the scenes)
+	- dockerization, containerization, orchestration, cgroups and namespaces (dive deeper into how CI/CD works behind the scenes)
 	- [coroutine](https://www.youtube.com/watch?v=VwBnPZQl5m8) vs thread vs process (know how programs run in different settings and units)
 	- [API gateway](https://www.youtube.com/watch?v=vHQqQBYJtLI)
 	- [database transaction priciples: ACID](https://www.geeksforgeeks.org/acid-properties-in-dbms/)
@@ -22,14 +40,22 @@ In this post, I'll summarize what I've done for my first ever professional devel
 1. Learn different web development frameworks
 	- Django (remember Graham did a hackathon project to protect our partner forms from CSRF attacks, Django may offer such a capability)
 	- Angular vs React vs Vue (to have a broader view over different frameworks to facilitate our future decision/migration)
-1. Learn Redis, [SQL vs NoSQL](https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-1-what-is-redis/1-1-1-redis-compared-to-other-databases-and-software/) (redis is best known for its caching, but it also provides features such as querying, locking, throttling and Pub/Sub; data is always in memory so Redis is fast; redis is single-threaded so you may consider its master-slave scaling to serve more requests.)
-1. Consolidate golang microservice development essence (learn prior to the cadence workflow, how did we do to make use of the golang concurrency)
+1. Learn Redis, [SQL vs NoSQL](https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-1-what-is-redis/1-1-1-redis-compared-to-other-databases-and-software/)
+(redis is best known for its caching feature, but it also provides features such as querying, locking, throttling and Pub/Sub;
+data is always in memory so Redis is fast; redis is single-threaded so you may consider its master-slave scaling to serve many requests at a time.)
+1. Consolidate golang microservice development essence
+(learn prior to the cadence workflow, how did we do to make use of the golang concurrency)
 	- goroutines and channels
 	- gRPC
 
 - What next?
 ----------------
-Learn rust: rust is comparatively new to the industry as its first stable release was in May 2015. The language, as you may heard, has multiple advantages over other languages such as it is fast, memory-safe, concurrency-safe and etc. The main downside of the language is that its learning curve is long and the code isn't as readable as golang or your familiar mainstream languages. However, to get ahead of the game, we may start learning it sooner rather than later.
+Learn rust: rust is comparatively new to the industry as its first stable release was in May 2015.
+The language, as you may have heard, has multiple advantages over other languages
+such as it is fast, memory-safe, concurrency-safe, etc.
+The main downside of the language is that its learning curve is long,
+and the code isn't as readable as golang or your familiar mainstream languages.
+However, to get ahead of the game, we may start learning it sooner rather than later.
 
 
 ## Materials
